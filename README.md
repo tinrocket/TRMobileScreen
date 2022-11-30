@@ -14,13 +14,13 @@ In the OrientationChanged event, controls will report their BEFORE dimensions. T
 
 
 ### The Fix
-This project has a subclass, TRMobileScreen, that workarounds these layout events inconsistencies.
+This project has a subclass, TRMobileScreen, that works around these layout events inconsistencies.
 
 The Opening event will only fire after the layout engine has unpacked and placed screen controls:
 
 ![cbb4eb959df692f9a19474fda85f8bd3f1fa36da](https://user-images.githubusercontent.com/759144/204837235-be35695f-a772-4b8e-b24d-0f8c2dabeca9.png)
 
-The OrientationChanged event will only fire after the layout engine has unpacked and placed screen controls:
+The OrientationChanged event will only fire after the layout engine has updated the screen controls:
 
 ![cbb4eb959df692f9a19474fda85f8bd3f1fa36da](https://user-images.githubusercontent.com/759144/204837430-1861006e-ee83-4577-8ee2-563c68b49996.png)
 
