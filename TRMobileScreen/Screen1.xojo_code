@@ -62,7 +62,9 @@ End
 	#tag Event
 		Sub Opening()
 		  
-		  Me.HasNavigationBar = False // Workaround XOJO bug? The IDE setting has this set to False, but it still shows up at launch
+		  // Workaround XOJO bug? The IDE setting has the NavBar set too False and large title set to .Never, but it's different at launch
+		  Me.HasNavigationBar = False
+		  Me.LargeTitleDisplayMode = MobileScreen.LargeTitleDisplayModes.Never
 		  
 		End Sub
 	#tag EndEvent

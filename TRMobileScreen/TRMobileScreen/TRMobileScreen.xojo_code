@@ -56,7 +56,14 @@ Implements TRMobileScreenDelegate
 		Private Function LayoutIsReady() As Boolean
 		  // Part of the TRMobileScreenDelegate interface.
 		  
+		  // Work around bug: https://tracker.xojo.com/xojoinc/xojo/-/issues/71069
+		  // Quickly toggle the navbar visiblity to get the correct screen height
+		  Dim hasNav As Boolean = Me.HasNavigationBar
+		  Me.HasNavigationBar = False
 		  Dim s0 As Size = Me.Size
+		  Me.HasNavigationBar = hasNav
+		  //
+		  
 		  Dim s1 As Size = New Size(Me.LayoutCanvas.Width, Me.LayoutCanvas.Height)
 		  Dim layoutIsGood As Boolean = s0.Width = s1.Width And s0.Height = s1.Height
 		  
@@ -75,6 +82,7 @@ Implements TRMobileScreenDelegate
 		  End
 		  
 		  Return layoutIsGood
+		  
 		End Function
 	#tag EndMethod
 
