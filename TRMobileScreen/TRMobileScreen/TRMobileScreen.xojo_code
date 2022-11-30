@@ -56,7 +56,9 @@ Implements TRMobileScreenDelegate
 		Private Function LayoutIsReady() As Boolean
 		  // Part of the TRMobileScreenDelegate interface.
 		  
-		  Dim layoutIsGood As Boolean = Me.LayoutCanvas.Width = Me.Size.Width And Me.LayoutCanvas.Height = Me.Size.Height
+		  Dim s0 As Size = Me.Size
+		  Dim s1 As Size = New Size(Me.LayoutCanvas.Width, Me.LayoutCanvas.Height)
+		  Dim layoutIsGood As Boolean = s0.Width = s1.Width And s0.Height = s1.Height
 		  
 		  If layoutIsGood Then
 		    If Me.NeedToFireOrientationChanged Then
