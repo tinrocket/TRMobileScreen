@@ -1,20 +1,14 @@
 #tag MobileScreen
 Begin TRMobileScreen Screen1
-   BackButtonCaption=   ""
    BackButtonTitle =   ""
    Compatibility   =   ""
-   ControlCount    =   0
    Device = 1
-   HasNavigationBar=   False
-   LargeTitleDisplayMode=   2
    LargeTitleMode  =   2
    Left            =   0
    NavigationBarVisible=   False
    Orientation = 0
-   TabBarVisible   =   True
    TabIcon         =   0
    TabTitle        =   ""
-   TintColor       =   &c00000000
    Title           =   "Untitled"
    Top             =   0
    Begin MobileCanvas Canvas1
@@ -38,13 +32,13 @@ Begin TRMobileScreen Screen1
          AccessibilityHint=   ""
          AccessibilityLabel=   ""
          Alignment       =   0
-         AutoLayout      =   Label1, 1, Canvas1, 1, False, +1.00, 4, 1, 20, , True
-         AutoLayout      =   Label1, 2, Canvas1, 2, False, +1.00, 4, 1, -*kStdGapCtlToViewH, , True
-         AutoLayout      =   Label1, 10, Canvas1, 10, False, +1.00, 4, 1, 0, , True
-         AutoLayout      =   Label1, 8, , 0, False, +1.00, 4, 1, 58, , True
+         AutoLayout      =   Label1, 8, , 0, False, +1.00, 4, 1, 60, , True
+         AutoLayout      =   Label1, 1, <Parent>, 1, False, +1.00, 4, 1, *kStdGapCtlToViewH, , True
+         AutoLayout      =   Label1, 2, <Parent>, 2, False, +1.00, 4, 1, -*kStdGapCtlToViewH, , True
+         AutoLayout      =   Label1, 10, <Parent>, 10, False, +1.00, 4, 1, 0, , True
          ControlCount    =   0
          Enabled         =   True
-         Height          =   58
+         Height          =   60
          Left            =   20
          LineBreakMode   =   0
          LockedInPosition=   False
@@ -56,7 +50,7 @@ Begin TRMobileScreen Screen1
          TextFont        =   ""
          TextSize        =   0
          TintColor       =   &c000000
-         Top             =   255
+         Top             =   254
          Visible         =   True
          Width           =   280
       End
@@ -66,10 +60,18 @@ End
 
 #tag WindowCode
 	#tag Event
+		Sub Opening()
+		  
+		  Me.HasNavigationBar = False // Workaround XOJO bug? The IDE setting has this set to False, but it still shows up at launch
+		  
+		End Sub
+	#tag EndEvent
+
+	#tag Event
 		Sub OrientationChanged()
+		  
 		  Label1.Text = "Full Screen Canvas Size: " + Canvas1.Width.ToString + " x " + Canvas1.Height.ToString
 		  Label1.Text = Label1.Text + EndOfLine + "Screen Size: " + Self.Size.Width.ToString + " x " + Self.Size.Height.ToString
-		  
 		  
 		End Sub
 	#tag EndEvent

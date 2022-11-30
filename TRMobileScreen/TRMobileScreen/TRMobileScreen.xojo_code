@@ -14,10 +14,10 @@ Implements TRMobileScreenDelegate
 		  
 		  Me.AddControl(Me.LayoutCanvas)
 		  
-		  Me.AddConstraint(New iOSLayoutConstraint(Me.LayoutCanvas, iOSLayoutConstraint.AttributeTypes.Width, iOSLayoutConstraint.RelationTypes.Equal, Me, iOSLayoutConstraint.AttributeTypes.Width, 1, 0))
-		  Me.AddConstraint(New iOSLayoutConstraint(Me.LayoutCanvas, iOSLayoutConstraint.AttributeTypes.Height, iOSLayoutConstraint.RelationTypes.Equal, Me, iOSLayoutConstraint.AttributeTypes.Height, 1, 0))
-		  Me.AddConstraint(New iOSLayoutConstraint(Me.LayoutCanvas, iOSLayoutConstraint.AttributeTypes.CenterX, iOSLayoutConstraint.RelationTypes.Equal, Me, iOSLayoutConstraint.AttributeTypes.CenterX, 1, 0))
-		  Me.AddConstraint(New iOSLayoutConstraint(Me.LayoutCanvas, iOSLayoutConstraint.AttributeTypes.CenterY, iOSLayoutConstraint.RelationTypes.Equal, Me, iOSLayoutConstraint.AttributeTypes.CenterY, 1, 0))
+		  Me.AddConstraint(New iOSLayoutConstraint(Me.LayoutCanvas, iOSLayoutConstraint.AttributeTypes.Left, iOSLayoutConstraint.RelationTypes.Equal, Me, iOSLayoutConstraint.AttributeTypes.Left, 1, 0))
+		  Me.AddConstraint(New iOSLayoutConstraint(Me.LayoutCanvas, iOSLayoutConstraint.AttributeTypes.Right, iOSLayoutConstraint.RelationTypes.Equal, Me, iOSLayoutConstraint.AttributeTypes.Right, 1, 0))
+		  Me.AddConstraint(New iOSLayoutConstraint(Me.LayoutCanvas, iOSLayoutConstraint.AttributeTypes.Top, iOSLayoutConstraint.RelationTypes.Equal, Me, iOSLayoutConstraint.AttributeTypes.Top, 1, 0))
+		  Me.AddConstraint(New iOSLayoutConstraint(Me.LayoutCanvas, iOSLayoutConstraint.AttributeTypes.Bottom, iOSLayoutConstraint.RelationTypes.Equal, Me, iOSLayoutConstraint.AttributeTypes.Bottom, 1, 0))
 		  
 		  RaiseEvent Opening
 		  
